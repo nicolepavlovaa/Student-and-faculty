@@ -13,10 +13,7 @@ public:
 	Faculty& operator=(Faculty& other);
 	Faculty& operator+=(Student& other);
 	Faculty& operator-=(Student& other);
-	Student& operator[](int index);
 	~Faculty();
-
-	Student getStudent(int index);
 };
 
 #endif 
