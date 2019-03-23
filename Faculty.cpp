@@ -3,6 +3,10 @@
 #include "Faculty.h"
 using namespace std;
 
+Student Faculty::getStudent(int index)
+{
+	return students[index];
+}
 Faculty::Faculty()
 {
 	Student * students = new Student[1];
@@ -31,11 +35,7 @@ Faculty& Faculty::operator=(Faculty& other)
 }
 Faculty& Faculty::operator+=(Student& other)
 {
-	int size=sizeof(this->students);
-	if (students[0].getName() != "Anonymous") 
-	{
-		size = sizeof(this->students) + 1;
-	}
+	int size=sizeof(this->students)+1;
 	Student * temp = new Student[size];
 	for (int i = 0; i < size-1; i++)
 	{
@@ -74,6 +74,11 @@ Faculty& Faculty::operator-=(Student& other)
 		students = temp;
 	}
 	return *this;
+}
+
+Student & Faculty::operator[](int index)
+{
+	return this->students[index];
 }
 
 Faculty::~Faculty()
