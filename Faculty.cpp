@@ -10,6 +10,8 @@ Faculty::Faculty()
 Faculty::Faculty(Faculty& other)
 {
 	int size = sizeof(other);
+	delete[] students;
+	students = new Student[size];
 	for (int i = 0; i < size; i++)
 	{
 		this->students[i] = other.students[i];
