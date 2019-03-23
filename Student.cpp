@@ -34,13 +34,11 @@ void Student::print()
 {
 	cout << "name: " << name << " fn: " << fn << " course: " << course << endl;
 }
-Student::Student(const char * n, int facNum, int c)
+Student::Student(const char * n, int facNum, int c) :name(nullptr), course(c), fn(facNum)
 {
-	fn = facNum;
-	course = c;
 	setName(n);
 }
-Student::Student(Student& other) :name(nullptr), fn(other.fn), course(other.course)
+Student::Student(const Student& other) :name(nullptr), fn(other.fn), course(other.course)
 {
 	setName(other.name);
 }
@@ -48,9 +46,9 @@ Student& Student::operator=(Student& other)
 {
 	if (this != &other)
 	{
+		delete[] name;
 		fn = other.fn;
 		course = other.course;
-		delete[] name;
 		name = new char[strlen(other.name) + 1];
 		strcpy_s(name, strlen(other.name) + 1, other.name);
 	}
@@ -64,15 +62,15 @@ bool Student::operator==(Student& other)
 	}
 	return false;
 }
-istream & operator>>(std::istream & is, Student & other)
+istream& operator>>(std::istream& is, Student& other)
 {
 	is.getline(other.name, 200);
 	is >> other.fn >> other.course;
 	return is;
 }
-ostream & operator<<(std::ostream & os, const Student & other)
+ostream& operator<<(std::ostream& os, const Student& other)
 {
-	os << "name: " << other.name << endl << "fn: " << other.fn << endl << "course: " << other.course;
+	os << "name: " << other.name << endl << "fn: " << other.fn << endl << "course: " << other.course<< endl;
 	return os;
 }
 
