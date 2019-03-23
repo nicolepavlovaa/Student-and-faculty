@@ -3,10 +3,6 @@
 #include "Faculty.h"
 using namespace std;
 
-Student Faculty::getStudent(int index)
-{
-	return students[index];
-}
 Faculty::Faculty()
 {
 	Student * students = new Student[1];
@@ -78,11 +74,6 @@ Faculty& Faculty::operator-=(Student& other)
 		students = temp;
 	}
 	return *this;
-}
-
-Student & Faculty::operator[](int index)
-{
-	return this->students[index];
 }
 
 Faculty::~Faculty()
