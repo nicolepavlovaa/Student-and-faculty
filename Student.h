@@ -1,6 +1,6 @@
-
-#ifndef __PLAYER_H
-#define __PLAYER_H
+#include <iostream>
+#ifndef __STUDENT_H
+#define __STUDENT_H
 class Student
 {
 	char * name;
@@ -9,7 +9,7 @@ class Student
 
 public:
 	Student(const char * name = "Anonymous", int fn = 0, int course = 0);
-	Student(Student& other);
+	Student(const Student& other);
 	Student& operator=(Student& other);
 	bool operator!=(Student & other);
 	bool operator==(Student & other);
