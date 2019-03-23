@@ -9,7 +9,7 @@ class Faculty
 
 public:
 	Faculty();
-	Faculty(Faculty& other);
+	Faculty(const Faculty& other);
 	Faculty& operator=(Faculty& other);
 	Faculty& operator+=(Student& other);
 	Faculty& operator-=(Student& other);
