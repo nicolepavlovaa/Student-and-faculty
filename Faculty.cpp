@@ -7,7 +7,7 @@ Faculty::Faculty()
 {
 	Student * students = new Student[1];
 }
-Faculty::Faculty(Faculty& other)
+Faculty::Faculty(const Faculty& other)
 {
 	int size = sizeof(other);
 	delete[] students;
