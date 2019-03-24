@@ -10,7 +10,7 @@ int main()
 	Student nicole;
 	Student anna;
 	Faculty FMI;
-	
+
 	maya.setName("Maya");
 	maya.setFn(10101);
 	maya.setCourse(2);
@@ -20,6 +20,8 @@ int main()
 	cout << maya << endl;
 	cout << nicole << endl;
 	FMI += nicole;
+	FMI += maya;
+	cout << FMI.getStudent(0) << endl;
 	if (maya == nicole)
 	{
 		cout << "yes" << endl;
