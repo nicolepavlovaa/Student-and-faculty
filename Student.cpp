@@ -64,7 +64,10 @@ bool Student::operator==(Student& other)
 }
 istream& operator>>(std::istream& is, Student& other)
 {
-	is.getline(other.name, 200);
+	char * arr=new char[250];
+	is.getline(arr, 250);
+	strcpy_s(other.name, 250, arr);
+	delete[] arr;
 	is >> other.fn >> other.course;
 	return is;
 }
