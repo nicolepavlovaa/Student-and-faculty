@@ -6,6 +6,7 @@
 class Faculty
 {
 	Student * students;
+	int size;
 
 public:
 	Faculty();
@@ -13,6 +14,7 @@ public:
 	Faculty& operator=(Faculty& other);
 	Faculty& operator+=(Student& other);
 	Faculty& operator-=(Student& other);
+	Student& getStudent(int index);
 	~Faculty();
 };
 
